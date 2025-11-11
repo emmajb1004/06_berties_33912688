@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books at <%=shopData.shopName%></title>
+</head>
+<body>
+    <h1><%=shopData.shopName%></h1>
+    <h2>Here are the books that we sell</h2>
+    <ul>
+        <% availableBooks.forEach((book) => { %>
+            <li><strong><%= book.name %></strong>, £<%= book.price %></li>
+        <% }); %>
+    </ul>
+
+</body>
+</html>
