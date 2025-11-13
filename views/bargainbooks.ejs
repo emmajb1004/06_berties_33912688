@@ -11,6 +11,7 @@
         <h1 class="mb-4"><%=shopData.shopName%></h1>
         <h2>Here are the bargain books (under £20) that we sell</h2>
         <ul>
+            <%# Loop through books under 20 in database %>
             <% availableBooks.forEach((book) => { %>
                 <li><strong><%= book.name %></strong>, £<%= book.price %></li>
             <% }); %>

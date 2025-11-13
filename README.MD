@@ -4,7 +4,27 @@ Sample code for Dynamic Web Applications module.
 
 Uses node.js with Express and EJS.
 
+# Thirsty Student
+A node.js web application about a bookshop. You can see available books, bargain books, search for books, register, add books, and see the about page. 
+
+## Technololgies Used
+HTML is used for structuring the pages. They are stored in the views folder. 
+The bootstrap CSS library is used for styling the webpage
+EJS templates is used as a templating engine for Javascript to generate dynamic HTML web pages
+Express is the web framework for Node.js which serves the HTTP server.
+Also uses the Node Package Manager (npm)
+Uses SQL as the backend database
+
+## How to Install and Run
+
+git clone https://github.com/emmajb1004/06_berties_33912688.git
+cd 06_berties_33912688
+
 To install and run:
 
 npm install
 node index.js
+
+To execute javascript file run node followed by the file's name (i.e. node index.js)
+
+Web page should run on port 8000 (http://localhost:8000/)

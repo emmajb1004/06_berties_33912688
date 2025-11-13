@@ -10,10 +10,12 @@
     <div class="container">
         <h1 class="mb-4"><%=shopData.shopName%></h1>
         <h2>Here are your search results</h2>
+        <%# Show message if no results found for search query %>
         <% if (searchResults.length === 0) { %>
             <p>No books found matching your search.</p>
         <% } else { %>
             <ul>
+                <%# Loop through books that contain the search query %>
                 <% searchResults.forEach((result) => { %>
                     <li><strong><%= result.name %></strong>, £<%= result.price %></li>
                 <% }); %>
