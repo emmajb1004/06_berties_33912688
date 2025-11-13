@@ -2,15 +2,17 @@
 <html>
   <head>
     <title>Register for <%=shopData.shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Register for <%=shopData.shopName%></h1>
-    <form method="POST" action="registered">
-        <p>First name: <input id="first" type="text" name="first" /></p>
-        <p>Last name: <input id="last" type="text" name="last" /></p>
-        <p>Email: <input id="email" type="email" name="email" /></p>
-        <input type="submit" value="Register" />
-      </form>
+    <div class="container">
+      <h1 class="mb-4">Register for <%=shopData.shopName%></h1>
+      <form method="POST" action="registered">
+          <p>First name: <input id="first" type="text" name="first" /></p>
+          <p>Last name: <input id="last" type="text" name="last" /></p>
+          <p>Email: <input id="email" type="email" name="email" /></p>
+          <input type="submit" value="Register" />
+        </form>
+      </div>
   </body>
 </html>

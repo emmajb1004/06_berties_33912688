@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>Search <%=shopData.shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Search <%=shopData.shopName%></h1>
-    <form action="/books/search-result" method="GET">
-      <p>What book do you want?</p>
-      <input id="search-box" type="text" name="search_text">
-      <input type="submit" value="Search" >
-    </form>
+    <div class="container">
+      <h1 class="mb-4">Search <%=shopData.shopName%></h1>
+      <form action="/books/search-result" method="GET">
+        <p>What book do you want?</p>
+        <input id="search-box" type="text" name="search_text">
+        <input type="submit" value="Search" >
+      </form>
+    </div>
   </body>
 </html>

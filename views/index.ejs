@@ -3,11 +3,17 @@
   <head>
     <title>Welcome to <%=shopData.shopName%></title>
     <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Welcome to <%=shopData.shopName%></h1>
-    <p><a href="about">About <%=shopData.shopName%></a></p>
-    <p><a href="books/search">Search for books</a></p>
-    <p><a href="users/register">Register with us</a></p>
+    <div class="container">
+      <h1 class="mb-4">Welcome to <%=shopData.shopName%></h1>
+      <p><a href="about">About <%=shopData.shopName%></a></p>
+      <p><a href="books/search">Search for books</a></p>
+      <p><a href="users/register">Register with us</a></p>
+      <p><a href="/books/list">List Books</a></p>
+      <p><a href="/books/addbook">Add a new Book</a></p>
+      <p><a href="/books/bargainbooks">Books Under £20</a></p>
+  </div>
   </body>
 </html>

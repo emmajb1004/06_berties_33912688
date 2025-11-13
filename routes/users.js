@@ -2,6 +2,7 @@
 const express = require("express")
 const router = express.Router()
 
+//route handlers for registering users
 router.get('/register', function (req, res, next) {
     res.render('register.ejs')
 })

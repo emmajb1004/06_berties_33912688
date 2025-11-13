@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>Add Book Page for <%=shopData.shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add Book to <%=shopData.shopName%></h1>
-    <form method="POST" action="/books/bookadded">
-        <p>Book name: <input id="book_name" type="text" name="name" /></p>
-        <p>Price: <input id="price" type="text" name="price" /></p>
-        <input type="submit" value="Add Book" />
-      </form>
+    <div class="container">
+        <h1 class="mb-4">Add Book to <%=shopData.shopName%></h1>
+        <form method="POST" action="/books/bookadded">
+            <p>Book name: <input id="book_name" type="text" name="name" /></p>
+            <p>Price: <input id="price" type="text" name="price" /></p>
+            <input type="submit" value="Add Book" />
+        </form>
+      </div>
   </body>
 </html>

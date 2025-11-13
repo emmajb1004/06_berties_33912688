@@ -2,6 +2,7 @@
 const express = require("express")
 const router = express.Router()
 
+//route handlers for searches
 router.get('/search',function(req, res, next){
     res.render("search.ejs")
 });
@@ -21,6 +22,7 @@ router.get('/search-result', function (req, res, next) {
     })
 });
 
+//route handler for list
 router.get('/list', function(req,res,next) {
     let sqlquery = "SELECT * FROM books"; //query database to get all the books
     
@@ -33,6 +35,7 @@ router.get('/list', function(req,res,next) {
     });
 });
 
+//route handler for book additions
 router.get('/addbook', function(req,res,next) {
     res.render("addbook.ejs");
 })
@@ -51,6 +54,7 @@ router.post('/bookadded', function(req,res,next) {
     })
 })
 
+//route handler for books under 20 pounds
 router.get('/bargainbooks', function(req,res,next) {
     let sqlquery = "SELECT * FROM books WHERE price < 20";
     db.query(sqlquery, (err,result) => {
