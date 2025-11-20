@@ -28,3 +28,9 @@ node index.js
 To execute javascript file run node followed by the file's name (i.e. node index.js)
 
 Web page should run on port 8000 (http://localhost:8000/)
+
+## dotenv
+Dotenv is a module used to secure database credentials. Sensitive information like the username and password are stored in a .env file, which is ignored by GitHub becasue it contains out secret database credentials. The application loads these variables using require('dotenv').config() that is in index.js.
+
+## audit
+I created a logins table to store the login attempts. I used a similar technique for the other list pages to create the audit page. It queries the logins database and shows the username of the attempted login, if it was succesful and what time the login attempt was. I created a route for the audit page and edited the loggedin route to insert the login attempt into the logins database.

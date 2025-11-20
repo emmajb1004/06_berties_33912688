@@ -5,6 +5,7 @@ CREATE DATABASE IF NOT EXISTS berties_books;
 USE berties_books;
 
 # Create the tables
+#Create the books table
 CREATE TABLE IF NOT EXISTS books (
     id     INT AUTO_INCREMENT,
     name   VARCHAR(50),
@@ -15,7 +16,7 @@ CREATE TABLE IF NOT EXISTS books (
 CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' IDENTIFIED BY 'qwertyuiop'; 
 GRANT ALL PRIVILEGES ON berties_books.* TO ' berties_books_app'@'localhost';
 
-# Create the users tables
+# Create the users table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE,
@@ -24,4 +25,13 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(100),
     hashedPassword VARCHAR(255),
     PRIMARY KEY (id)
+);
+
+#Create the logins table
+CREATE TABLE IF NOT EXISTS logins (
+    id INT AUTO_INCREMENT,
+    username VARCHAR(50),
+    success BOOLEAN,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
 );

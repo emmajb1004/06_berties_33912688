@@ -82,13 +82,26 @@ router.post('/loggedin', function (req, res, next) {
                     next(err);
                 }
                 else if (result == true) {
+                    //successful login
+                    db.query("INSERT INTO logins (username, success) VALUES (?,?)", [username, true]);
                     res.send("Login successful! Welcome " + firstName + " " + lastName);
                 }
                 else {
+                    db.query("INSERT INTO logins (username, success) VALUES (?,?)", [username, false]);
                     res.send("Login failed. Incorrect Password")
                 }
             })
         })
+})
+
+router.get('/audit', function(req,res,next) {
+    const sqlquery = "SELECT * FROM logins"
+    db.query(sqlquery, (err, result) => {
+        if (err) {
+            next(err);
+        }
+        res.render('audit.ejs', {audits: result})
+    })
 })
 
 // Export the router object so index.js can access it

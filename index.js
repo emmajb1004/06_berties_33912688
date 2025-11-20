@@ -4,6 +4,8 @@ var ejs = require('ejs')
 const path = require('path')
 var mysql = require('mysql2');
 
+require('dotenv').config(); //load .env variables
+
 // Create the express application object
 const app = express()
 const port = 8000
@@ -13,10 +15,10 @@ app.set('view engine', 'ejs')
 
 //define the database connection
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'berties_books_app',
-    password: 'qwertyuiop',
-    database: 'berties_books',
+    host: 'localhost',  
+    user: process.env.BB_USER,    // from .env
+    password: process.env.BB_PASSWORD, 
+    database: process.env.BB_DATABASE,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
