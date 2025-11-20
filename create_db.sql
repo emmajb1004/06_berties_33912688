@@ -15,3 +15,13 @@ CREATE TABLE IF NOT EXISTS books (
 CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' IDENTIFIED BY 'qwertyuiop'; 
 GRANT ALL PRIVILEGES ON berties_books.* TO ' berties_books_app'@'localhost';
 
+# Create the users tables
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    email VARCHAR(100),
+    hashedPassword VARCHAR(255),
+    PRIMARY KEY (id)
+);
