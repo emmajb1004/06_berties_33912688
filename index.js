@@ -1,10 +1,11 @@
+require('dotenv').config(); //load .env variables
+const session = require('express-session')
+
 // Import express and ejs
 var express = require ('express')
 var ejs = require('ejs')
 const path = require('path')
 var mysql = require('mysql2');
-
-require('dotenv').config(); //load .env variables
 
 // Create the express application object
 const app = express()
@@ -12,6 +13,16 @@ const port = 8000
 
 // Tell Express that we want to use EJS as the templating engine
 app.set('view engine', 'ejs')
+
+// Create a session
+app.use(session({
+    secret: 'somerandomstuff',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}))
 
 //define the database connection
 const db = mysql.createPool({
