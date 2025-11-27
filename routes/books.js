@@ -2,6 +2,8 @@
 const express = require("express")
 const router = express.Router()
 
+const { check, validationResult } = require('express-validator');
+
 const redirectLogin = (req, res, next) => {
         if (!req.session.userId ) {
           res.redirect('/users/login') // redirect to the login page
@@ -52,7 +54,9 @@ router.post('/bookadded', function(req,res,next) {
     //saving data in database
     let sqlquery = "INSERT INTO books (name, price) VALUES (?,?)"
     //execute sql query
-    let newrecord = [req.body.name, req.body.price]
+    let title = req.sanitize(req.body.name)
+    let price = req.body.price
+    let newrecord = [title, price]
     db.query(sqlquery, newrecord, (err,result) => {
         if (err) {
             next(err)

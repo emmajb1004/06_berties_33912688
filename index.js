@@ -1,5 +1,6 @@
 require('dotenv').config(); //load .env variables
 const session = require('express-session')
+const expressSanitizer = require('express-sanitizer');
 
 // Import express and ejs
 var express = require ('express')
@@ -13,6 +14,9 @@ const port = 8000
 
 // Tell Express that we want to use EJS as the templating engine
 app.set('view engine', 'ejs')
+
+// Create an input sanitizer
+app.use(expressSanitizer());
 
 // Create a session
 app.use(session({

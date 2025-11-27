@@ -35,5 +35,11 @@ Dotenv is a module used to secure database credentials. Sensitive information li
 ## audit
 I created a logins table to store the login attempts. I used a similar technique for the other list pages to create the audit page. It queries the logins database and shows the username of the attempted login, if it was succesful and what time the login attempt was. I created a route for the audit page and edited the loggedin route to insert the login attempt into the logins database.
 
-## week 8 extension task 5
+## week 8 extension task 5 8a
 I added access control to add books because it makes sense to not let any user add books, they should have to register. I did not add access control to the other parts of the website as I believe people should be able to search for books without having to be registered and it wouldn't make sense to add access control to registration as no one then would be able to use the website.
+
+## week 8 extension task 7 8bc
+I added sanitization to the username and email but not the password because if we sanitize the password it could create login failures and change the users password without them knowing. The username and email are displayed back to the user therefore they should be sanitized.  
+
+## week 8 extension task 7 8bc
+I also added sanitization to the add books section for the title as the user could also put a harmful input there as well.
