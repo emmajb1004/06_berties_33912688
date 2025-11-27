@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS books (
 
 # Create the application user
 CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' IDENTIFIED BY 'qwertyuiop'; 
-GRANT ALL PRIVILEGES ON berties_books.* TO ' berties_books_app'@'localhost';
+GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
 
 # Create the users table
 CREATE TABLE IF NOT EXISTS users (
