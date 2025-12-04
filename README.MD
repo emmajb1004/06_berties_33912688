@@ -43,3 +43,6 @@ I added sanitization to the username and email but not the password because if w
 
 ## week 8 extension task 7 8bc
 I also added sanitization to the add books section for the title as the user could also put a harmful input there as well.
+
+## week 9 api
+The /api/books route returns a list of books from the database and has optional query parameters for filtering and sorting. You can search for books by keyword using ?search=keyword, filter by price range using ?minprice=x&maxprice=y, and sort the results by either name or price using ?sort=name or ?sort=price. If no parameters are provided, the API returns all books.
